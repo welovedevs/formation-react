@@ -1,0 +1,2 @@
+locales/**/*.json
+packages/types/lib*

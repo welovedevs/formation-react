@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/w3d.css" />
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Formation React</h1>
+                    <img
+                        style="width: 150px"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+                    />
+                    <h5 style="margin-top: 50px">14-15 février 2022</h5>
+                    <h5>Blablacar x WeLoveDevs.com</h5>
+                </section>
+                <section>
+                    <div style="display: flex; justify-content: center">
+                        <ul style="margin: 32px">
+                            <li>Clément Devos - 30 ans</li>
+                            <li>Marié - 1,99999 enfants</li>
+                            <li>Développeur Web</li>
+                            <li>WeLoveDevs.com</li>
+                            <li>Ingénieur Centrale-IG2I</li>
+                            <li style="margin-top: 32px">RS : @clementdevos (twitter) , clementdevos (github)</li>
+                        </ul>
+                        <img
+                            style="width: 15vw; object-fit: contain"
+                            src="./assets/images/DSC00560-removebg-preview.png"
+                        />
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h2>WeLoveDevs.com</h2>
+                        <ul style="margin: 32px">
+                            <li>Fondé en 2016</li>
+                            <li>2 co-fondateurs développeurs</li>
+                            <li>“Ca devrait être facile de trouver un job”</li>
+                            <li>Jobboard WeLoveDevs.com</li>
+                            <li>Expertise accompagnement marque employeur</li>
+                            <ul>
+                                <li>Création de contenu</li>
+                                <li>Audits</li>
+                                <li>Accompagnement blog technique</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <h2>Programme de la formation</h2>
+                        <h4>4 Demi journées</h4>
+                        <ol style="margin: 32px 0">
+                            <li>Présentation de React et de l’outillage</li>
+                            <li>Ecrire de la syntaxe React (JSX, Components)</li>
+                            <li>Interactions et cycle de vie</li>
+                            <li>Outils avancés : Routage, gestion de l’état</li>
+                        </ol>
+                        <h4>70% pratique, 30% théorique</h4>
+                    </div>
+                </section>
+                <section>
+                    <section><h2>Pourquoi React?</h2></section>
+                    <section>
+                        <h3>2000-2015</h3>
+                        <img
+                            src="https://docs.google.com/drawings/d/e/2PACX-1vTMKWYZyOPoIx4ADkKx_Ds5EI7l1G23C3zBugVE_XJIOh8XcNBo6QzL8I1q3IxPKrlGfFB57qwr4Uca/pub?w=960&amp;h=720"
+                        />
+                        <ul>
+                            <li>Server Side Rendering</li>
+                            <li>AJAX pour dynamiser le contenu</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Le DOM</h2>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/langfr-1024px-DOM-model.svg.png"
+                            height="500"
+                        />
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            Modification des noeuds HTML directement (souvent avec jQuery)
+
+                            ```javascript
+
+                                const h1 = document.querySelector('h1');
+                                const text = h1.textContent;
+
+                                if (text === “Hello”) {
+                                    h1.textContent = “Hi”; // On modifie le DOM directement
+                                }
+
+                            ```
+
+                            ---
+
+                            ## Inconvénients
+
+                            * Difficile à suivre les modifications du DOM
+                            * Structuration du code compliquée
+                        </script>
+                    </section>
+                    <section>
+                        <h2>Transition de l'architecture Web</h2>
+                        <ul>
+                            <li>Multi Devices</li>
+                            <li>Augmentation du nombre d'applications</li>
+                            <li>Nécessité du découplage</li>
+                            <li>Nécessité de structurer les applications</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>En 2012</h3>
+
+                        <ul>
+                            <li>angular.js</li>
+                            <li>Déclaratif</li>
+                            <li>Orienté Composants</li>
+                            <li>Framework</li>
+                        </ul>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Architecture_of_an_Angular_2_application.png"
+                        />
+                    </section>
+                    <section>
+                        <h3>En 2015</h3>
+
+                        <ul>
+                            <li>Facebook introduit React</li>
+                            <li>Déclaratif</li>
+                            <li>Orienté Composants</li>
+                            <li>Implémentation libre</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>2015</h3>
+                        <img
+                            src="https://docs.google.com/drawings/d/e/2PACX-1vQJ6NtVSvbMgCI0GsW9Dq1zvHV7pdmGRNPA-7XfiPCe15jvrRliRbeAB2TjGWfcH7J7F59fh1XXloBX/pub?w=960&amp;h=720"
+                        />
+                        <ul>
+                            <li>Découplage Client/serveur (API)</li>
+                            <li>Client side rendering</li>
+                            <li>Augmentation des appels HTTP</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>20xx</h3>
+                        <img
+                            src="https://docs.google.com/drawings/d/e/2PACX-1vR_5eKuNUysgmJDoe0kN_1dNU-f1SyWm-g31ph8vBbvi8qDYagb3cCABNufsVOsqlxbEejOJN5hyk3X/pub?w=959&amp;h=282"
+                        />
+                        <ul>
+                            <li>Recouplage client/serveur</li>
+                            <li>Hybrid Server Side rendering</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>20xx</h3>
+                        <h3>Web Components ?</h3>
+                        <ul>
+                            <li>HTML/CSS/JS seulement</li>
+                            <li>Spécifications W3C</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>React</h1>
+                    </section>
+                    <section>
+                        <h1>Fonctionalités</h1>
+                        <ul>
+                            <li>Composants</li>
+                            <li>Virtual DOM</li>
+                            <li>JSX</li>
+                            <li>Gestion de l'état</li>
+                            <li>SSR</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Historique</h1>
+                        <ul>
+                            <li>Première release 0.3 (29/05/2013)</li>
+                            <li>Stable depuis la v16.8</li>
+                            <ul>
+                                <li>Livraison des hooks</li>
+                            </ul>
+                            <li>v17 stable : Changement de performance/sécurité</li>
+                            <li>v18</li>
+                            <ul>
+                                <li>Rendu asynchrone</li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Communauté</h1>
+                        <ul>
+                            <li>182k ⭐ Github</li>
+                            <li>2M de repo github</li>
+                            <li>https://github.com/enaqx/awesome-react</li>
+                        </ul>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            # Hello World
+
+                            ```html
+                            <div id="root">
+                                <!-- This element's contents will be replaced with your component. -->
+                            </div>
+                            ```
+
+                            ```javascript
+                            ReactDOM.render(
+                               React.createElement('h1',{children :'Hello, world!'}),
+                            document.getElementById('root')
+                            );
+                            ```
+
+                            ---
+                            # Hello World (JSX)
+
+                            ```html
+                            <div id="root">
+                                <!-- This element's contents will be replaced with your component. -->
+                            </div>
+                            ```
+
+                            ```javascript
+                            ReactDOM.render(
+                                <h1>Hello, world!</h1>,
+                                document.getElementById('root')
+                            );
+
+                            ```
+
+                            ---
+                            # Virtual DOM
+
+                            ---
+
+                            ```javascript
+                            function tick() {
+                                const element = (
+                                <div>
+                                    <h1>Hello, world!</h1>
+                                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                                </div>
+                                );
+                                ReactDOM.render(element, document.getElementById('root'));
+                            }
+
+                            setInterval(tick, 1000);
+                            ```
+
+                            ---
+
+                            ![VirtualDOM rocks](https://reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif)
+                        </script>
+                    </section>
+                    <section>
+                        <h1>JSX</h1>
+                        <div>Comment les navigateurs le lisent?</div>
+                    </section>
+                    <section>
+                        <p
+                            class="codepen"
+                            data-height="300"
+                            data-default-tab="html,result"
+                            data-slug-hash="MjrdWg"
+                            data-user="gaearon"
+                            style="
+                                height: 300px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid;
+                                margin: 1em 0;
+                                padding: 1em;
+                            "
+                        >
+                            <span
+                                >See the Pen
+                                <a href="https://codepen.io/gaearon/pen/MjrdWg"> Hello World in React</a> by Dan Abramov
+                                (<a href="https://codepen.io/gaearon">@gaearon</a>) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                            >
+                        </p>
+                    </section>
+                    <section>
+                        <h1>Trans(com)pileurs</h1>
+
+                        <ul>
+                            <li>ES6 ==> ES3</li>
+                            <li>JSX ==> Javascript</li>
+                        </ul>
+                        <div style="margin-top: 32px">Babel, Typescript</div>
+                    </section>
+                    <section>
+                        <img src="https://caniuse.bitsofco.de/image/es6.png" />
+                    </section>
+                    <section>
+                        <h1>Bundlers</h1>
+
+                        <ul>
+                            <li>Faciliter la livraison du code</li>
+                            <li>Code splitting</li>
+                            <li>Minifying</li>
+                            <li>...</li>
+                        </ul>
+                        <div style="margin-top: 32px">Webpack, vite, rollup</div>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            # Démonstration
+
+                            Démarrer un projet React avec webpack
+
+                            [Article](https://dev.to/riyanegi/setting-up-webpack-5-with-react-and-babel-from-scratch-2021-271l)
+                            ---
+                        </script>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+            });
+        </script>
+    </body>
+</html>
