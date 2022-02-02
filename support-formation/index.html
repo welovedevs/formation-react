@@ -72,6 +72,10 @@
                     </div>
                 </section>
                 <section>
+                    <h1>Partie 1</h1>
+                    <h2>Présentation</h2>
+                </section>
+                <section>
                     <section><h2>Pourquoi React?</h2></section>
                     <section>
                         <h3>2000-2015</h3>
@@ -213,64 +217,10 @@
                         </ul>
                     </section>
 
-                    <section data-markdown>
-                        <script type="text/template">
-                            # Hello World
-
-                            ```html
-                            <div id="root">
-                                <!-- This element's contents will be replaced with your component. -->
-                            </div>
-                            ```
-
-                            ```javascript
-                            ReactDOM.render(
-                               React.createElement('h1',{children :'Hello, world!'}),
-                            document.getElementById('root')
-                            );
-                            ```
-
-                            ---
-                            # Hello World (JSX)
-
-                            ```html
-                            <div id="root">
-                                <!-- This element's contents will be replaced with your component. -->
-                            </div>
-                            ```
-
-                            ```javascript
-                            ReactDOM.render(
-                                <h1>Hello, world!</h1>,
-                                document.getElementById('root')
-                            );
-
-                            ```
-
-                            ---
-                            # Virtual DOM
-
-                            ---
-
-                            ```javascript
-                            function tick() {
-                                const element = (
-                                <div>
-                                    <h1>Hello, world!</h1>
-                                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
-                                </div>
-                                );
-                                ReactDOM.render(element, document.getElementById('root'));
-                            }
-
-                            setInterval(tick, 1000);
-                            ```
-
-                            ---
-
-                            ![VirtualDOM rocks](https://reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif)
-                        </script>
-                    </section>
+                    <section
+                        data-markdown="markdown/partie_1/00_hello_world.md"
+                        data-separator-notes="^Note:"
+                    ></section>
                     <section>
                         <h1>JSX</h1>
                         <div>Comment les navigateurs le lisent?</div>
@@ -334,6 +284,25 @@
                             ---
                         </script>
                     </section>
+                </section>
+                <section>
+                    <h1>Fin partie 1</h1>
+                </section>
+                <section>
+                    <section>
+                        <h1>Partie 2</h1>
+                        <h2>Syntaxe JSX/API</h2>
+                    </section>
+                    <section>
+                        <h2>Rappels Javascript (ES6)</h2>
+                    </section>
+                    <section data-markdown="markdown/partie_2/00_es6.md" data-separator-notes="^Note:"></section>
+                </section>
+                <section>
+                    <section>
+                        <h2>React API/JSX</h2>
+                    </section>
+                    <section data-markdown="markdown/partie_2/01_react.md" data-separator-notes="^Note:"></section>
                 </section>
             </div>
         </div>

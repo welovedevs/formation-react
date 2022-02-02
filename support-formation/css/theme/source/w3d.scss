@@ -26,7 +26,7 @@ $mainFont: 'Avenir Next', Helvetica, sans-serif;
 $headingFont: 'Avenir Next', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
-$headingTextTransform: capitalize;
+$headingTextTransform: unset;
 $headingFontWeight: 600;
 $linkColor: #42affa;
 $linkColorHover: lighten( $linkColor, 15% );
