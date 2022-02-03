@@ -7,7 +7,7 @@
 ```
 
 ```javascript
-ReactDOM.render(React.createElement('h1', { children: 'Hello, world!' }), document.getElementById('root'));
+ReactDOM.render(React.createElement('h1', null, 'Hello World!'), document.getElementById('root'));
 ```
 
 ---

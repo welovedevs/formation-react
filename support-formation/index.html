@@ -78,15 +78,17 @@
                 <section>
                     <section><h2>Pourquoi React?</h2></section>
                     <section>
-                        <h3>2000-2015</h3>
-                        <img
-                            src="https://docs.google.com/drawings/d/e/2PACX-1vTMKWYZyOPoIx4ADkKx_Ds5EI7l1G23C3zBugVE_XJIOh8XcNBo6QzL8I1q3IxPKrlGfFB57qwr4Uca/pub?w=960&amp;h=720"
-                        />
-                        <ul>
-                            <li>Server Side Rendering</li>
-                            <li>AJAX pour dynamiser le contenu</li>
-                        </ul>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/Wm_xI7KntDs"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
                     </section>
+
                     <section>
                         <h2>Le DOM</h2>
                         <img
@@ -97,6 +99,8 @@
                     <section data-markdown>
                         <script type="text/template">
                             Modification des noeuds HTML directement (souvent avec jQuery)
+
+                            L'état vit dans le noeud DOM
 
                             ```javascript
 
@@ -127,26 +131,54 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>En 2012</h3>
+                        <h3>En 2010</h3>
 
+                        <h4>Backbone JS</h4>
                         <ul>
-                            <li>angular.js</li>
-                            <li>Déclaratif</li>
-                            <li>Orienté Composants</li>
-                            <li>Framework</li>
+                            <li>MVC</li>
+                            <li>Séparer la vue du model</li>
                         </ul>
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Architecture_of_an_Angular_2_application.png"
+                            style="padding: 16px; background-color: white; border-radius: 8px"
+                            src="https://backbonejs.org/docs/images/intro-model-view.svg"
                         />
                     </section>
                     <section>
-                        <h3>En 2015</h3>
+                        <h3>En 2012</h3>
 
+                        <h4>angular.js</h4>
                         <ul>
-                            <li>Facebook introduit React</li>
+                            <li>2-way databinding</li>
+                            <li><b>Framework</b></li>
+                            <li><b>Opiniated</b></li>
+                        </ul>
+
+                        <div>
+                            <img
+                                height="200px"
+                                src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Architecture_of_an_Angular_2_application.png"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <h3>En 2013</h3>
+
+                        <h4>Facebook introduit React</h4>
+                        <ul>
+                            <li>La vue devient une fonction</li>
                             <li>Déclaratif</li>
                             <li>Orienté Composants</li>
                             <li>Implémentation libre</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>2000-2015</h3>
+                        <img
+                            src="https://docs.google.com/drawings/d/e/2PACX-1vTMKWYZyOPoIx4ADkKx_Ds5EI7l1G23C3zBugVE_XJIOh8XcNBo6QzL8I1q3IxPKrlGfFB57qwr4Uca/pub?w=960&amp;h=720"
+                        />
+                        <ul>
+                            <li>Server Side Rendering</li>
+                            <li>AJAX pour dynamiser le contenu</li>
                         </ul>
                     </section>
                     <section>
@@ -168,6 +200,7 @@
                         <ul>
                             <li>Recouplage client/serveur</li>
                             <li>Hybrid Server Side rendering</li>
+                            <li>Static Site Generator (next.js)</li>
                         </ul>
                     </section>
                     <section>
@@ -281,13 +314,13 @@
                             Démarrer un projet React avec webpack
 
                             [Article](https://dev.to/riyanegi/setting-up-webpack-5-with-react-and-babel-from-scratch-2021-271l)
-                            ---
                         </script>
                     </section>
+                    <section>
+                        <h1>Fin partie 1</h1>
+                    </section>
                 </section>
-                <section>
-                    <h1>Fin partie 1</h1>
-                </section>
+
                 <section>
                     <section>
                         <h1>Partie 2</h1>
@@ -303,6 +336,19 @@
                         <h2>React API/JSX</h2>
                     </section>
                     <section data-markdown="markdown/partie_2/01_react.md" data-separator-notes="^Note:"></section>
+                    <section>
+                        <h1>Fin partie 2</h1>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Partie 3</h1>
+                        <h2>React Router/State Manager</h2>
+                    </section>
+                    <section data-markdown="markdown/partie_3/01_react_router.md" data-separator-notes="^Note:"></section>
+                    <section>
+                        <h1>Fin partie 3</h1>
+                    </section>
                 </section>
             </div>
         </div>

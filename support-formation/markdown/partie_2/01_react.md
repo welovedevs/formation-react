@@ -45,7 +45,10 @@ const Content = () => {
 };
 
 const RootElement = () => <Content />;
+
 ```
+
+![](./assets/partie_2/hello_world_noprops.png)
 
 ---
 
@@ -63,6 +66,8 @@ const Content = (props) => {
 
 const RootElement = () => <Content name="Clément" />;
 ```
+
+![](./assets/partie_2/hello_world.png)
 
 ---
 
@@ -133,7 +138,7 @@ const UsersList = () => {
 
 ---
 
-```javascript
+```jsx
 const users = [
     { name: 'Clément', age: 30 },
     { name: 'Marie-Elisabeth', age: 28 },
@@ -144,7 +149,7 @@ const UsersList = () => {
     return (
         <div>
             {users.map(({ name, age }) => (
-                <div key="person_${name}">
+                <div key={`person_${name}`}>
                     {name} - {age} an(s)
                 </div>
             ))}
@@ -259,6 +264,10 @@ const UsersList = ({ visible, onAdd }) => {
 ---
 
 Hands On : Création d'une liste
+
+* Afficher la liste
+* Trier la liste
+* Ajouter des éléments à la liste
 
 ---
 
