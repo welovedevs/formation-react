@@ -7,7 +7,10 @@
 ```
 
 ```javascript
-ReactDOM.render(React.createElement('h1', null, 'Hello World!'), document.getElementById('root'));
+ReactDOM.render(
+    React.createElement('h1', null, 'Hello World!'), 
+    document.getElementById('root')
+);
 ```
 
 ---
@@ -21,7 +24,10 @@ ReactDOM.render(React.createElement('h1', null, 'Hello World!'), document.getEle
 ```
 
 ```javascript
-ReactDOM.render(<h1>Hello, world!</h1>, document.getElementById('root'));
+ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('root')
+);
 ```
 
 ---

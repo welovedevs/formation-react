@@ -6,19 +6,8 @@ Tout est composant!
 
 ### React.Component
 
-Penser en composants
-
-```jsx
-const element = (
-    <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
-    </div>
-);
-ReactDOM.render(element, document.getElementById('root'));
-```
-
----
+-   Penser en composants
+-   Les composants sont des fonctions !
 
 ```jsx
 const RootElement = () => (
@@ -45,7 +34,6 @@ const Content = () => {
 };
 
 const RootElement = () => <Content />;
-
 ```
 
 ![](./assets/partie_2/hello_world_noprops.png)
@@ -149,9 +137,11 @@ const UsersList = () => {
     return (
         <div>
             {users.map(({ name, age }) => (
-                <div key={`person_${name}`}>
-                    {name} - {age} an(s)
-                </div>
+                <Personne 
+                    key={`person_${name}`} 
+                    nom={name} 
+                    age={age} 
+                />
             ))}
         </div>
     );
@@ -265,9 +255,9 @@ const UsersList = ({ visible, onAdd }) => {
 
 Hands On : Création d'une liste
 
-* Afficher la liste
-* Trier la liste
-* Ajouter des éléments à la liste
+-   Afficher la liste
+-   Trier la liste
+-   Ajouter des éléments à la liste
 
 ---
 
