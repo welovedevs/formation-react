@@ -175,3 +175,19 @@ Dans le formulaire...
     Ajouter
 </button>
 ```
+---
+
+Hands on :
+
+* Ajouter un contexte pour le store
+* Ajouter un reducer
+* changer les onAdd/onDelete
+
+[Lien Sandbox 4](https://codesandbox.io/s/correction-partie-3-0uxl8)
+
+
+---
+
+Corrigé part 4
+
+https://codesandbox.io/s/04-correction-partie-4-tr44j
