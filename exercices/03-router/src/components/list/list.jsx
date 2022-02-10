@@ -55,9 +55,6 @@ export const List = () => {
                     <Outlet />
                 </div>
             </div>
-            <Link to="/form">
-                Ajouter un user
-            </Link>
         </div>
     );
 };

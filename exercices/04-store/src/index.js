@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AddPersonForm, List } from './components/list/list';
-import { UserPage } from './components/user-page/user-page';
 import { StoreContext } from './reducers/store';
 import { userReducers } from './reducers/user_reducer';
 import rawUsers from './data/users.json';
+import { UserPage } from './components/user_page/user_page';
+import { List } from './components/list/list';
+import { AddPersonForm } from './components/form/addPersonForm';
 
 const Root = () => {
     const userStore = useReducer(userReducers, { users: rawUsers });

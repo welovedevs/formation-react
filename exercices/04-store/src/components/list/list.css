@@ -18,19 +18,22 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .list-item-text {
-    margin : 8px 0px;
+    margin: 8px 0px;
 }
 
-.form{
+.form {
     display: flex;
     align-items: center;
-    padding: 8px
+    padding: 8px;
 }
-.form input{
-    margin:8px
+.form input {
+    margin: 8px;
 }
 
-.sort-control{
-    display:flex;
-    padding: 8px
+.sort-control {
+    display: flex;
+    padding: 8px;
+}
+.users-container {
+    display: flex;
 }

@@ -1,0 +1,7 @@
+.user_container {
+    width :300px;
+    margin: 16px;
+    padding: 16px;
+    border: 1px lightgray solid;
+    border-radius: 8px;
+}

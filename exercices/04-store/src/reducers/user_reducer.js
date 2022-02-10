@@ -10,5 +10,8 @@ export const userReducers = (state, action) => {
                 users: state.users.filter(({ name }) => name !== action.nameToDelete)
             };
         }
+        default: {
+            return state;
+        }
     }
 };
