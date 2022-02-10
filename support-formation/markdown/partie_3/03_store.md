@@ -1,3 +1,30 @@
+## Super tout ça !
+
+...
+
+Mais comment on partage les données entre les pages?
+
+---
+
+## data.js
+
+```javascript
+import jsonData from './list/data.json';
+
+export let persons = [...jsonData];
+
+export const addPerson = (newUser) => {
+    persons = [...persons, newUser];
+};
+
+export const deletePerson = (nameToDelete) => {
+    persons = persons.filter(({ name }) => name !== nameToDelete);
+};
+```
+
+NON. Ne faites pas çà !
+
+
 ## State Manager/ Reducer
 
 ![Reducer Diagram](https://dmitripavlutin.com/5c33affee33e7c40e73028fb48a8367b/diagram.svg) <!-- .element: style="padding:16px;background-color:white;border-radius:8px" -->
@@ -148,7 +175,3 @@ Dans le formulaire...
     Ajouter
 </button>
 ```
-
----
-
-Et voila !

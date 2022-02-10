@@ -158,3 +158,4 @@ const SomeDeepNestedComponent = () => {
 -   useEffect: Appliquer un effet de bord
 -   useContext: Stocker une valeur dans le contexte
 
+[Lien Sandbox 2](https://codesandbox.io/s/1-correction-partie-1-hp792)

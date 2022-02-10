@@ -241,28 +241,11 @@ export const User_page = () => {
 
 ---
 
-## Super tout ça !
+Hands on
 
-...
+React router 
 
-Mais comment on partage les données entre les pages?
+* Implémenter une route pour le formulaire
+* Implémenter un Outlet pour afficher un composant en fonction de la route
 
----
-
-## data.js
-
-```javascript
-import jsonData from './list/data.json';
-
-export let persons = [...jsonData];
-
-export const addPerson = (newUser) => {
-    persons = [...persons, newUser];
-};
-
-export const deletePerson = (nameToDelete) => {
-    persons = persons.filter(({ name }) => name !== nameToDelete);
-};
-```
-
-NON. Ne faites pas çà !
+[Lien Sandbox 3](https://codesandbox.io/s/1-correction-partie-1-hp792)

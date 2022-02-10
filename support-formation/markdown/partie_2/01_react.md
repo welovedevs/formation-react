@@ -135,7 +135,7 @@ Hands On : Création d'une liste
 -   Trier la liste
 -   Ajouter des éléments à la liste
 
-[Lien Sandbox 1](https://codesandbox.io/s/start-hands-on-partie-1-eikni)
+[Lien Sandbox 1](https://codesandbox.io/s/starter-exercice-1-mki6f)
 
 ---
 
