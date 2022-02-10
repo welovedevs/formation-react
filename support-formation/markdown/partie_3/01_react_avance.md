@@ -151,41 +151,6 @@ const SomeDeepNestedComponent = () => {
 
 ---
 
-## useReducer
-
-```javascript
-const reducer = (state, action) => {
-    switch (action.type){
-        case "ADD" {
-            return {
-                ...state,
-                items : [...state, action.item]
-            }
-        }
-    }
-}
-```
-
-```javascript
-const Component = () => {
-    const [state, dispatch] = useReducer(reducer, { items: [] });
-    return (
-        <div>
-            <button
-                onClick={() => {
-                    dispatch({
-                        action: 'ADD',
-                        item: {}
-                    });
-                }}
-            />
-        </div>
-    );
-};
-```
-
----
-
 ## Hands-on : Hooks
 
 -   useMemo: Memoiser une valeur
@@ -193,4 +158,3 @@ const Component = () => {
 -   useEffect: Appliquer un effet de bord
 -   useContext: Stocker une valeur dans le contexte
 
-On verra useReducer plus tard !

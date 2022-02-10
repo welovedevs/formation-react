@@ -211,7 +211,7 @@ ReactDOM.render(
             <Routes>
                 <Route path="/" element={<Home />}>
                     <Route path="/users" element={<List />}>
-                        <Route path=":id" element={<UserPage />} />
+                        <Route path=":id" element={<User_page />} />
                     </Route>
                     <Route path="/form" element={<AddUserForm />} />
                     <Route path="*" element={<div>404!</div>} />
@@ -232,7 +232,7 @@ Il faut ajouter `<Outlet/>` dans _list.jsx_
 ```jsx
 import { useParams } from 'react-router';
 
-export const UserPage = () => {
+export const User_page = () => {
     const params = useParams();
 
     return <div>{params.id}</div>;

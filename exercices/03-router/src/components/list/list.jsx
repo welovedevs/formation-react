@@ -1,9 +1,7 @@
-import { useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import './list.css';
-
-import rawList from './data.json';
+import { AppContext } from '../../context/app_context';
 import { Link, Outlet } from 'react-router-dom';
-
 export const ListDisplay = ({ list, onDelete }) => {
     return (
         <div className="items-container">
@@ -27,38 +25,23 @@ export const ListDisplay = ({ list, onDelete }) => {
     );
 };
 
-export const AddPersonForm = ({ onAdd }) => {
-    const [name, setName] = useState('');
-    const [age, setAge] = useState(23);
-    const [department, setDepartment] = useState('it');
+export const List = () => {
+    const { list, setList } = useContext(AppContext);
 
-    const resetForm = () => {
-        setName('');
-        setAge(23);
-        setDepartment('it');
-    };
-    return (
-        <div className="form">
-            <span>Ajouter un élément</span>
-            <input type="text" value={name} placeholder="Nom :" onChange={(e) => setName(e.target.value)} />
-            <input type="number" value={age} placeholder="Age :" onChange={(e) => setAge(Number(e.target.value))} />
-            <input type="text" value={department} placeholder="Age :" onChange={(e) => setDepartment(e.target.value)} />
-            <button
-                onClick={() => {
-                    onAdd({ name, age, department });
-                    resetForm();
-                }}
-            >
-                Ajouter
-            </button>
-        </div>
-    );
-};
-export const List = ({}) => {
-    const [list, setList] = useState(rawList);
     const [sortByAge, setSortByAge] = useState(false);
 
-    const displayList = sortByAge ? [...list].sort(({ age: a }, { age: b }) => a - b) : list;
+    const displayList = useMemo(() => {
+        return sortByAge ? [...list].sort(({ age: a }, { age: b }) => a - b) : list;
+    }, [sortByAge, list]);
+
+    let onDelete = useCallback(
+        (nameToDelete) => setList(list.filter(({ name }) => name && name !== nameToDelete)),
+        [list]
+    );
+
+    useEffect(() => {
+        console.log(`New list length, ${displayList.length}`);
+    }, [displayList.length]);
 
     return (
         <div className="container">
@@ -66,11 +49,15 @@ export const List = ({}) => {
                 <input type={'checkbox'} checked={sortByAge} onClick={() => setSortByAge(!sortByAge)} />
                 <label>Trier par age</label>
             </div>
-            <ListDisplay
-                list={displayList}
-                onDelete={(nameToDelete) => setList(list.filter(({ name }) => name !== nameToDelete))}
-            />
-            <Outlet />
+            <div className="users-container">
+                <ListDisplay list={displayList} onDelete={onDelete} />
+                <div>
+                    <Outlet />
+                </div>
+            </div>
+            <Link to="/form">
+                Ajouter un user
+            </Link>
         </div>
     );
 };
