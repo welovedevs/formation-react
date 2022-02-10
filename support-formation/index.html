@@ -29,7 +29,7 @@
                     <div style="display: flex; justify-content: center">
                         <ul style="margin: 32px">
                             <li>Clément Devos - 30 ans</li>
-                            <li>Marié - 1,99999 enfants</li>
+                            <li>Marié - 1,95 enfants</li>
                             <li>Développeur Web</li>
                             <li>WeLoveDevs.com</li>
                             <li>Ingénieur Centrale-IG2I</li>
@@ -66,7 +66,12 @@
                             <li>Comprendre et rédiger du code en JSX</li>
                         </ol>
                     </div>
-                </section>         <section>
+                </section>
+                <section>
+                    <h1>Partie 0</h1>
+                    <h2>Présentons-nous</h2>
+                </section>
+                <section>
                     <div>
                         <h2>Programme de la formation</h2>
                         <h4>4 Demi journées</h4>
@@ -103,6 +108,10 @@
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/langfr-1024px-DOM-model.svg.png"
                             height="500"
                         />
+                        <aside class="notes">
+                            DOM : Document Object Model<br />
+                            Modéliser le contenu du navigateur web<br />
+                        </aside>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
@@ -174,17 +183,42 @@
                         <h4>Facebook introduit React</h4>
                         <ul>
                             <li>La vue devient une fonction</li>
-                            <li>Déclaratif</li>
+                            <li>Déclaratif*</li>
                             <li>Orienté Composants</li>
                             <li>Implémentation libre</li>
                         </ul>
-                        <aside class="notes">
-                            Explique Déclaratif
-                            Explique Comoposants
-                        </aside>
+                        <aside class="notes">Explique Déclaratif Explique Comoposants</aside>
                     </section>
                     <section>
-                        <h3>2000-2015</h3>
+                        <h3>20xx</h3>
+                        <h3>Web Components ?</h3>
+                        <ul>
+                            <li>HTML/CSS/JS seulement</li>
+                            <li>Spécifications W3C</li>
+                        </ul>
+                        <pre>
+                            <code>
+import './my-header.js';
+import './my-article.js';
+import './my-footer.js';
+
+class MyPage extends LitElement {
+  render() {
+    return html`
+      <my-header></my-header>
+      <my-article></my-article>
+      <my-footer></my-footer>
+    `;
+  }
+}
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Un peu d'architecture front</h3>
+                    </section>
+                    <section>
+                        <h3>2000-2010</h3>
                         <img
                             src="https://docs.google.com/drawings/d/e/2PACX-1vTMKWYZyOPoIx4ADkKx_Ds5EI7l1G23C3zBugVE_XJIOh8XcNBo6QzL8I1q3IxPKrlGfFB57qwr4Uca/pub?w=960&amp;h=720"
                         />
@@ -194,13 +228,13 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>2015</h3>
+                        <h3>2010</h3>
                         <img
                             src="https://docs.google.com/drawings/d/e/2PACX-1vQJ6NtVSvbMgCI0GsW9Dq1zvHV7pdmGRNPA-7XfiPCe15jvrRliRbeAB2TjGWfcH7J7F59fh1XXloBX/pub?w=960&amp;h=720"
                         />
                         <ul>
                             <li>Découplage Client/serveur (API)</li>
-                            <li>Client side rendering</li>
+                            <li>Client side rendering (App Mobile)</li>
                             <li>Augmentation des appels HTTP</li>
                         </ul>
                     </section>
@@ -213,14 +247,7 @@
                             <li>Recouplage client/serveur</li>
                             <li>Hybrid Server Side rendering</li>
                             <li>Static Site Generator (next.js)</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>20xx</h3>
-                        <h3>Web Components ?</h3>
-                        <ul>
-                            <li>HTML/CSS/JS seulement</li>
-                            <li>Spécifications W3C</li>
+                            <li>Micro Front-ends?</li>
                         </ul>
                     </section>
                 </section>
@@ -242,7 +269,7 @@
                         <h1>Historique</h1>
                         <ul>
                             <li>Première release 0.3 (29/05/2013)</li>
-                            <li>Stable depuis la v16.8 (02/2019)</li>
+                            <li>"Stable" depuis la v16.8 (02/2019)</li>
                             <ul>
                                 <li>Livraison des hooks</li>
                             </ul>
@@ -327,11 +354,12 @@
 
                             [Article](https://dev.to/riyanegi/setting-up-webpack-5-with-react-and-babel-from-scratch-2021-271l)
 
+                            [Sandbox](https://codesandbox.io/s/presentation-webpack-0nlkx)
+
                             Notes: Montrer la structure du projet
                             Expliquer le fonctionnement du bundler
                             Montrer les loaders webpack
                             Citer 2-3 loaders (sass, assets-loader pour les fonts...)
-
                         </script>
                     </section>
                     <section>

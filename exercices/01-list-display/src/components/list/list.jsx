@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import './list.css';
 import { AppContext } from '../../context/app_context';
+import rawList from './data.json';
 
 export const ListDisplay = ({ list, onDelete }) => {
     return (
@@ -47,22 +48,10 @@ export const AddPersonForm = ({ onAdd }) => {
     );
 };
 export const List = () => {
-    const { list, setList } = useContext(AppContext);
-
+    const [list, setList] = useState(rawList);
     const [sortByAge, setSortByAge] = useState(false);
 
-    const displayList = useMemo(() => {
-        return sortByAge ? [...list].sort(({ age: a }, { age: b }) => a - b) : list;
-    }, [sortByAge, list]);
-
-    let onDelete = useCallback(
-        (nameToDelete) => setList(list.filter(({ name }) => name && name !== nameToDelete)),
-        [list]
-    );
-
-    useEffect(() => {
-        console.log(`New list length, ${displayList.length}`);
-    }, [displayList.length]);
+    const displayList = sortByAge ? [...list].sort(({ age: a }, { age: b }) => a - b) : list;
 
     return (
         <div className="container">
@@ -71,7 +60,10 @@ export const List = () => {
                 <input type={'checkbox'} checked={sortByAge} onClick={() => setSortByAge(!sortByAge)} />
                 <label>Trier par age</label>
             </div>
-            <ListDisplay list={displayList} onDelete={onDelete} />
+            <ListDisplay
+                list={displayList}
+                onDelete={(nameToDelete) => setList(list.filter(({ name }) => name && name !== nameToDelete))}
+            />
         </div>
     );
 };
