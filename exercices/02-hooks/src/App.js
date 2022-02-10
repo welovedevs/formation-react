@@ -4,6 +4,7 @@ import { AppContext } from './context/app_context';
 import { useState } from 'react';
 import rawList from './components/list/data.json';
 import { ListRecap } from './components/list_recap/list_recap';
+import {WindowWidthDisplay} from "./components/window_width/window_width";
 
 function App() {
     const [list, setList] = useState(rawList);
@@ -16,6 +17,7 @@ function App() {
                 <main>
                     <List />
                     <ListRecap />
+                    <WindowWidthDisplay />
                 </main>
             </div>
         </AppContext.Provider>

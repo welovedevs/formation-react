@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import './list.css';
 import { AppContext } from '../../context/app_context';
+import {AddPersonForm} from "../form/addPersonForm";
 
 export const ListDisplay = ({ list, onDelete }) => {
     return (
@@ -19,33 +20,6 @@ export const ListDisplay = ({ list, onDelete }) => {
     );
 };
 
-export const AddPersonForm = ({ onAdd }) => {
-    const [name, setName] = useState('');
-    const [age, setAge] = useState(23);
-    const [department, setDepartment] = useState('it');
-
-    const resetForm = () => {
-        setName('');
-        setAge(23);
-        setDepartment('it');
-    };
-    return (
-        <div className="form">
-            <span>Ajouter un élément</span>
-            <input type="text" value={name} placeholder="Nom :" onChange={(e) => setName(e.target.value)} />
-            <input type="number" value={age} placeholder="Age :" onChange={(e) => setAge(Number(e.target.value))} />
-            <input type="text" value={department} placeholder="Age :" onChange={(e) => setDepartment(e.target.value)} />
-            <button
-                onClick={() => {
-                    onAdd({ name, age, department });
-                    resetForm();
-                }}
-            >
-                Ajouter
-            </button>
-        </div>
-    );
-};
 export const List = () => {
     const { list, setList } = useContext(AppContext);
 
@@ -55,6 +29,10 @@ export const List = () => {
         return sortByAge ? [...list].sort(({ age: a }, { age: b }) => a - b) : list;
     }, [sortByAge, list]);
 
+    let onAdd = useCallback(
+        (newItem) => setList([...list, newItem]),
+        [list]
+    );
     let onDelete = useCallback(
         (nameToDelete) => setList(list.filter(({ name }) => name && name !== nameToDelete)),
         [list]
@@ -66,7 +44,7 @@ export const List = () => {
 
     return (
         <div className="container">
-            <AddPersonForm onAdd={(newItem) => setList([...list, newItem])} />
+            <AddPersonForm onAdd={onAdd} />
             <div className="sort-control">
                 <input type={'checkbox'} checked={sortByAge} onClick={() => setSortByAge(!sortByAge)} />
                 <label>Trier par age</label>
