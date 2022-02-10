@@ -1,6 +1,5 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import './list.css';
-import { AppContext } from '../../context/app_context';
 import rawList from './data.json';
 
 export const ListDisplay = ({ list, onDelete }) => {
