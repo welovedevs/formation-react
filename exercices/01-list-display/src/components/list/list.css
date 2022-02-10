@@ -20,17 +20,3 @@
 .list-item-text {
     margin : 8px 0px;
 }
-
-.form{
-    display: flex;
-    align-items: center;
-    padding: 8px
-}
-.form input{
-    margin:8px
-}
-
-.sort-control{
-    display:flex;
-    padding: 8px
-}
