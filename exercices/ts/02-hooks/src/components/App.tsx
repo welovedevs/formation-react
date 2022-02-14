@@ -16,13 +16,12 @@ function App() {
         [list]
     );
 
-    const onAdd = useCallback((newUser: ListUser) => setList([...list, newUser]), [list]);
     return (
         <UsersContext.Provider value={{ users: list }}>
             <div className="App">
                 <header className={style.header}>WeLoveDevs.com Users List</header>
                 <main>
-                    <UserForm onAdd={onAdd} />
+                    <UserForm onAdd={(newUser: ListUser) => setList([...list, newUser])} />
                     <UserList onDelete={onDelete} />
                 </main>
             </div>

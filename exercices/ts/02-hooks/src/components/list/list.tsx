@@ -2,6 +2,7 @@ import { ListUser } from '../../types/users';
 import React, { useContext, useMemo, useState } from 'react';
 import styles from './list.module.css';
 import { UsersContext } from '../context/users_context';
+import { useWindowWidth } from '../hooks/use_window_width';
 
 const UserItem: React.FC<{ user: ListUser; onDelete: (string: string) => void }> = ({ user, onDelete }) => {
     return (
@@ -19,6 +20,7 @@ const UserItem: React.FC<{ user: ListUser; onDelete: (string: string) => void }>
     );
 };
 export const UserList: React.FC<{ onDelete: (string: string) => void }> = ({ onDelete }) => {
+    const { width } = useWindowWidth();
     const { users: userList } = useContext(UsersContext);
     const [sortByAge, setSortByAge] = useState(false);
 
@@ -44,6 +46,7 @@ export const UserList: React.FC<{ onDelete: (string: string) => void }> = ({ onD
                     />
                 ))}
             </div>
+            <div>{width}px</div>
         </div>
     );
 };
