@@ -23,10 +23,10 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
-            // {
-            //     test: /\.svg$/,
-            //     loader: 'svg-url-loader'
-            // },
+            {
+                test: /\.svg$/,
+                loader: 'svg-url-loader'
+            },
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
