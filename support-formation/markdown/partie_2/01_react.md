@@ -94,7 +94,7 @@ const UserFieldName = ({ onAdd }) => {
                 }}
             />
             <button
-                onAdd={() => {
+                onClick={() => {
                     onAdd(textField);
                     setTextFieldValue('');
                 }}
