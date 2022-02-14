@@ -22,7 +22,7 @@ export const deletePerson = (nameToDelete) => {
 };
 ```
 
-NON. Ne faites pas çà !
+Ne faites pas ça !
 
 
 ## State Manager/ Reducer

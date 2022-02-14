@@ -1,16 +1,15 @@
 import { useCallback, useContext, useState } from 'react';
 import './form.css';
 import { useNavigate } from 'react-router';
-import { StoreContext } from '../../reducers/store';
+import { UsersWriteContext } from '../../reducers/store';
 
 export const AddPersonForm = () => {
     const [name, setName] = useState('');
     const [age, setAge] = useState(23);
     const [department, setDepartment] = useState('it');
     const navigate = useNavigate();
-    const {
-        userStore: [, dispatch]
-    } = useContext(StoreContext);
+    const dispatch = useContext(UsersWriteContext);
+
     const resetForm = () => {
         setName('');
         setAge(23);

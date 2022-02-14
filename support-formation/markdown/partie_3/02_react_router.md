@@ -246,6 +246,6 @@ Hands on
 React router 
 
 * Implémenter une route pour le formulaire
-* Implémenter un Outlet pour afficher un composant en fonction de la route
+* Implémenter un Outlet pour afficher la fiche d'une personne en fonction de la route
 
 [Lien Sandbox 3](https://codesandbox.io/s/2-correction-partie-2-dcf2f)
