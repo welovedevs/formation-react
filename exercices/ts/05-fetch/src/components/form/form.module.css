@@ -1,0 +1,25 @@
+.card {
+    padding: 8px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100px;
+}
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.formItem {
+    margin: 0 8px;
+}
+.formItem label {
+    margin-right: 8px;
+}
