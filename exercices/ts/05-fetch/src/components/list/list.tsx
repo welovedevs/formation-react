@@ -41,6 +41,7 @@ export const UserList: React.FC = () => {
 
     return (
         <div>
+            {process.env.REACT_APP_MY_SUPER_SECRET_URL}
             <div>
                 <input type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                 <label>Search For Users</label>
