@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Clément",
+        "age": 30,
+        "department": "it"
+    },
+    {
+        "name": "Vincent",
+        "age": 31,
+        "department": "it"
+    },
+    {
+        "name": "Baptiste",
+        "age": 23,
+        "department": "it"
+    },
+    {
+        "name": "Mathilde",
+        "age": 24,
+        "department": "sales"
+    },
+    {
+        "name": "Maxime",
+        "age": 24,
+        "department": "sales"
+    },
+    {
+        "name": "Maxence",
+        "age": 22,
+        "department": "sales"
+    },
+    {
+        "name": "Nicolas",
+        "age": 26,
+        "department": "marketing"
+    },
+    {
+        "name": "Insaf",
+        "age": 23,
+        "department": "marketing"
+    },
+    {
+        "name": "Charlotte",
+        "age": 24,
+        "department": "marketing"
+    },
+    {
+        "name": "Martin",
+        "age": 33,
+        "department": "customer_relationship"
+    },
+    {
+        "name": "Camille",
+        "age": 24,
+        "department": "customer_relationship"
+    }
+]
