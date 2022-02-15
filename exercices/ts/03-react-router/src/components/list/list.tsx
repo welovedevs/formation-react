@@ -1,31 +1,32 @@
 import { ListUser } from '../../types/users';
 import React, { useContext, useMemo, useState } from 'react';
 import styles from './list.module.css';
-import { UsersContext } from '../context/users_context';
-import { useWindowWidth } from '../hooks/use_window_width';
+import { Link, Outlet } from 'react-router-dom';
+import { useWindowWidth } from '../../hooks/use_window_width';
+import { UsersContext } from '../../context/users_context';
 
 interface SomeParametrizedInterface<MySuperType> {
     myVariable: Array<MySuperType>;
 }
 
-const UserItem: React.FC<{ user: ListUser; onDelete: (string: string) => void }> = ({ user, onDelete, children }) => {
-
+const UserItem: React.FC<{ user: ListUser }> = ({ user }) => {
     return (
         <div className={styles.card}>
-            <img
-                alt={`${user.name} Profile picture`}
-                src={`https://i.pravatar.cc/250?${user.name}_${user.age}`}
-                className={styles.img}
-            />
+            <Link to={`/users/${user.name}`}>
+                <img
+                    alt={`${user.name} Profile picture`}
+                    src={`https://i.pravatar.cc/250?${user.name}_${user.age}`}
+                    className={styles.img}
+                />
+            </Link>
             <span>
                 {user.name} - {user.age}
             </span>
-            <button onClick={() => onDelete(user.name)}>Supprimer</button>
         </div>
     );
 };
 
-export const UserList: React.FC<{ onDelete: (string: string) => void }> = ({ onDelete }) => {
+export const UserList: React.FC = () => {
     const { width } = useWindowWidth();
     const { users: userList } = useContext(UsersContext);
     const [sortByAge, setSortByAge] = useState(false);
@@ -43,14 +44,13 @@ export const UserList: React.FC<{ onDelete: (string: string) => void }> = ({ onD
                 <input type="checkbox" checked={sortByAge} onChange={(e) => setSortByAge(e.target.checked)} />
                 <label> Sort By Age</label>
             </div>
-            <div className={styles.list}>
-                {sortedList.map((user) => (
-                    <UserItem
-                        key={`user_list_item_${user.name}_${user.age}`}
-                        user={user as ListUser}
-                        onDelete={onDelete}
-                    />
-                ))}
+            <div className={styles.listContainer}>
+                <div className={styles.list}>
+                    {sortedList.map((user) => (
+                        <UserItem key={`user_list_item_${user.name}_${user.age}`} user={user as ListUser} />
+                    ))}
+                </div>
+                <Outlet />
             </div>
             <div>{width}px</div>
         </div>

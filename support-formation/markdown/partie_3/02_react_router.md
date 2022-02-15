@@ -36,9 +36,8 @@ Non, mais faut bidouiller
 
 -   Router
 -   Link
--   Route
+-   Route(s)
 -   Outlet
--   Switch
 
 ---
 

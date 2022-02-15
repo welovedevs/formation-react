@@ -3,10 +3,13 @@ import style from './App.module.css';
 import { UserList } from './list/list';
 import rawList from './data.json';
 import { ListUser } from '../types/users';
-import { UserForm } from './form/form';
-import { UsersContext } from './context/users_context';
+import { Link, Outlet } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
+import { UsersContext } from '../context/users_context';
 
-
+const HomeRender = () => {
+    return <h1>Accueil</h1>;
+};
 function App() {
     const [list, setList] = useState<Array<ListUser>>(rawList as Array<ListUser>);
 
@@ -17,18 +20,24 @@ function App() {
         [list]
     );
 
-
     const onAdd = useCallback((newUser: ListUser) => setList([...list, newUser]), [list]);
 
-
     return (
-
-        <UsersContext.Provider value={{ users: list }}>
+        <UsersContext.Provider value={{ users: list, onAdd, onDelete }}>
             <div className="App">
                 <header className={style.header}>WeLoveDevs.com Users List</header>
+                <nav className={style.nav}>
+                    <Link to="/">
+                        <b>Home</b>
+                    </Link>
+                    <Link to="/form">Add a user</Link>
+                    <Link to="/users">List Users</Link>
+                </nav>
                 <main>
-                    <UserForm onAdd={onAdd} />
-                    <UserList onDelete={onDelete} />
+                    <Routes>
+                        <Route path="/" element={<HomeRender />} />
+                    </Routes>
+                    <Outlet />
                 </main>
             </div>
         </UsersContext.Provider>
