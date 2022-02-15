@@ -13,12 +13,6 @@ export const UserInformations = () => {
         return users.find(({ name }) => params.name === name);
     }, [users, params.name]);
 
-   useEffect(() => {
-       if(!user){
-           navigate("/users")
-       }
-   },[user])
-
     if (!user) {
         return <Navigate to="/users" />;
     }

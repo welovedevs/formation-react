@@ -35,6 +35,7 @@ function App() {
                 </nav>
                 <main>
                     <Routes>
+                        <Route path="/users" element={<h1>Liste Users</h1>} />
                         <Route path="/" element={<HomeRender />} />
                     </Routes>
                     <Outlet />

@@ -24,6 +24,7 @@ export const deletePerson = (nameToDelete) => {
 
 Ne faites pas ça !
 
+---
 
 ## State Manager/ Reducer
 
@@ -60,11 +61,13 @@ export const userReducers = (state, action) => {
     switch (action.type) {
         case 'ADD_USER': {
             return {
+                ...state,
                 users: [...state.users, action.newUser]
             };
         }
         case 'DELETE_USER': {
             return {
+                ...state, 
                 users: state.users.filter(({ name }) => name !== action.nameToDelete)
             };
         }
@@ -139,7 +142,16 @@ const { users: list } = state;
 Retour à notre liste..
 
 ```jsx
-<ListDisplay list={displayList} onDelete={(nameToDelete) => dispatch({ type: 'DELETE_USER', nameToDelete })} />
+
+const {
+    userStore: [state,dispatch]
+} = useContext(StoreContext);
+
+<ListDisplay 
+    list={displayList} 
+    onDelete={(nameToDelete) => 
+        dispatch({ type: 'DELETE_USER', nameToDelete }        )} 
+/>
 ```
 
 ---
