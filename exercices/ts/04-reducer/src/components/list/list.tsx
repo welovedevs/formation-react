@@ -3,7 +3,7 @@ import React, { useContext, useMemo, useState } from 'react';
 import styles from './list.module.css';
 import { Link, Outlet } from 'react-router-dom';
 import { useWindowWidth } from '../../hooks/use_window_width';
-import { UsersContext } from '../../store/users/users_context';
+import { UsersReadContext } from '../../store/users/users_context';
 
 const UserItem: React.FC<{ user: ListUser }> = ({ user }) => {
     return (
@@ -24,12 +24,10 @@ const UserItem: React.FC<{ user: ListUser }> = ({ user }) => {
 
 export const UserList: React.FC = () => {
     const { width } = useWindowWidth();
-    const {
-        userReducer: [state]
-    } = useContext(UsersContext);
+    const { usersState } = useContext(UsersReadContext);
     const [sortByAge, setSortByAge] = useState(false);
 
-    const { users: userList } = state;
+    const { users: userList } = usersState;
 
     const sortedList = useMemo(() => {
         if (sortByAge) {

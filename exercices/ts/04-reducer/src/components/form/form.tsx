@@ -1,7 +1,7 @@
 import { ListUser } from '../../types/users';
 import React, { FormEvent, useContext, useState } from 'react';
 import styles from './form.module.css';
-import { UsersContext } from '../../store/users/users_context';
+import { UsersWriteContext } from '../../store/users/users_context';
 import { ADD_USER } from '../../store/users/actions';
 import { useNavigate } from 'react-router';
 
@@ -10,9 +10,7 @@ export const UserForm: React.FC<{}> = () => {
     const [age, setAge] = useState(23);
     const [department, setDepartment] = useState<ListUser['department']>('it');
     const navigate = useNavigate();
-    const {
-        userReducer: [, dispatch]
-    } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersWriteContext);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();

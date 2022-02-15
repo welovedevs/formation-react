@@ -1,21 +1,15 @@
-import React, {useCallback, useReducer, useState} from 'react';
+import React from 'react';
 import style from './App.module.css';
-import { UserList } from './list/list';
-import rawList from './data.json';
-import { ListUser } from '../types/users';
 import { Link, Outlet } from 'react-router-dom';
 import { Route, Routes } from 'react-router';
-import { UsersContext } from '../store/users/users_context';
-import {usersReducer} from "../store/users/users_reducer";
+import { UsersProvider } from '../store/users/users_reducer_provider';
 
 const HomeRender = () => {
     return <h1>Accueil</h1>;
 };
 function App() {
-    const userReducer = useReducer(usersReducer,{users : rawList})
-
     return (
-        <UsersContext.Provider value={{ userReducer }}>
+        <UsersProvider>
             <div className="App">
                 <header className={style.header}>WeLoveDevs.com Users List</header>
                 <nav className={style.nav}>
@@ -33,7 +27,7 @@ function App() {
                     <Outlet />
                 </main>
             </div>
-        </UsersContext.Provider>
+        </UsersProvider>
     );
 }
 

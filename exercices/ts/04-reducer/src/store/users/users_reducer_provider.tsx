@@ -8,8 +8,8 @@ export const UsersProvider: React.FC = (props) => {
     const [state, dispatch] = useReducer(usersReducer, { users: rawList });
 
     return (
-        <UsersWriteContext.Provider value={{ dispatch }}>
-            <UsersReadContext.Provider value={{ usersState: state }}>{props.children}</UsersReadContext.Provider>
-        </UsersWriteContext.Provider>
+        <UsersReadContext.Provider value={{ usersState: state }}>
+            <UsersWriteContext.Provider value={{ dispatch }}>{props.children}</UsersWriteContext.Provider>
+        </UsersReadContext.Provider>
     );
 };
