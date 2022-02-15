@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 8px;
+    border: 1px lightgray solid;
+    border-radius: 8px;
 }
 
 .img {

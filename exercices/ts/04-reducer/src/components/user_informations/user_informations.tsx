@@ -20,6 +20,7 @@ export const UserInformations = () => {
     }
 
     const deleteUser = () => dispatch({ type: DELETE_USER, nameToDelete: user.name });
+
     return (
         <div className={styles.card}>
             <Link to={`/users/${user.name}`}>

@@ -5,24 +5,20 @@ import { Link, Outlet } from 'react-router-dom';
 import { useWindowWidth } from '../../hooks/use_window_width';
 import { UsersContext } from '../../store/users/users_context';
 
-interface SomeParametrizedInterface<MySuperType> {
-    myVariable: Array<MySuperType>;
-}
-
 const UserItem: React.FC<{ user: ListUser }> = ({ user }) => {
     return (
-        <div className={styles.card}>
-            <Link to={`/users/${user.name}`}>
+        <Link to={`/users/${user.name}`}>
+            <div className={styles.card}>
                 <img
                     alt={`${user.name} Profile picture`}
                     src={`https://i.pravatar.cc/250?u=${user.name}_${user.age}`}
                     className={styles.img}
                 />
-            </Link>
-            <span>
-                {user.name} - {user.age}
-            </span>
-        </div>
+                <span>
+                    {user.name} - {user.age}
+                </span>
+            </div>
+        </Link>
     );
 };
 

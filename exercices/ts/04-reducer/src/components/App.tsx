@@ -25,7 +25,7 @@ function App() {
                     <Link to="/form">Add a user</Link>
                     <Link to="/users">List Users</Link>
                 </nav>
-                <main>
+                <main className={style.mainContainer}>
                     <Routes>
                         <Route path="/users" element={<h1>Liste Users</h1>} />
                         <Route path="/" element={<HomeRender />} />

@@ -25,6 +25,9 @@
     color: white;
 }
 
+.mainContainer {
+    padding :16px
+}
 .nav {
     width: 100%;
     display: flex;
